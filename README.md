@@ -32,43 +32,15 @@ Card-Scout runs inside **Claude Code**, which requires either:
 
 ### Step 1 — Install Python 3
 
-Card-Scout needs Python 3 to save data to Excel.
+Card-Scout needs Python 3 to save data to Excel. The setup script (Step 3) will tell you if it's missing.
 
-**On Mac:**
-1. Open **Terminal** (press `Command + Space`, type `Terminal`, press Enter)
-2. Type: `python3 --version` and press Enter
-3. If you see something like `Python 3.11.4`, Python is already installed. Skip to Step 2.
-4. If you get an error, go to [python.org/downloads](https://python.org/downloads), download the latest version, and run the installer. When asked, check the box that says "Add Python to PATH".
+**On Mac:** Python 3 is usually already installed. If the setup script says it's missing, download it from [python.org/downloads](https://python.org/downloads).
 
-**On Windows:**
-1. Press the **Windows key**, type `cmd`, and press Enter to open Command Prompt
-2. Type: `python --version` and press Enter
-3. If you see `Python 3.x.x`, Python is already installed. Skip to Step 2.
-4. If not, go to [python.org/downloads](https://python.org/downloads), download and run the installer. **Important:** On the first installer screen, check "Add Python to PATH" before clicking Install.
+**On Windows:** Download from [python.org/downloads](https://python.org/downloads) and run the installer. **Important:** On the first installer screen, check the box that says **"Add Python to PATH"** before clicking Install.
 
 ---
 
-### Step 2 — Install the openpyxl Library
-
-This is a small library that lets Python read and write Excel files.
-
-**On Mac (in Terminal):**
-```
-pip3 install openpyxl Pillow
-```
-
-**On Windows (in Command Prompt):**
-```
-py -m pip install openpyxl Pillow
-```
-
-You should see messages ending in `Successfully installed openpyxl Pillow`. If it says "already installed", that's fine too.
-
-`openpyxl` handles the Excel file. `Pillow` automatically compresses large card photos before reading — without it, very large images will fail.
-
----
-
-### Step 3 — Install Claude Code
+### Step 2 — Install Claude Code
 
 Claude Code is the tool that runs Card-Scout. You install it from Anthropic's website — no technical knowledge needed.
 
@@ -76,39 +48,47 @@ Claude Code is the tool that runs Card-Scout. You install it from Anthropic's we
 1. Go to [claude.ai/code](https://claude.ai/code)
 2. Download the Mac installer (.dmg file)
 3. Open the downloaded file and drag Claude Code to your Applications folder
-4. Open Claude Code from your Applications folder
+4. Open Claude Code once to finish setup — it will ask you to log in
 
 **On Windows:**
 1. Go to [claude.ai/code](https://claude.ai/code)
 2. Download the Windows installer (.exe file)
 3. Run the installer and follow the prompts
-4. Open Claude Code from your Start menu
+4. Open Claude Code from your Start menu — it will ask you to log in
+
+**Logging in:**
+
+- **Claude subscription (Pro or Max):** Click "Sign in with Anthropic" and use your claude.ai email and password. Your subscription covers usage.
+- **API key:** Go to [console.anthropic.com](https://console.anthropic.com), create a key (starts with `sk-ant-...`), and paste it when Claude Code asks. Add a payment method so charges can be billed. Do not use someone else's key.
 
 ---
 
-### Step 4 — Log In to Claude Code
+### Step 3 — Run the Setup Script
 
-When you open Claude Code for the first time, it will ask you to log in.
+This installs the required Python libraries automatically.
 
-**Option A — Claude subscription (Pro or Max):**
-1. Click "Sign in with Anthropic"
-2. Log in with your claude.ai email and password
-3. Done — your subscription covers usage
+**On Mac:**
+1. Open the `Umesh-CardScout` folder in Finder
+2. Double-click **`setup.command`**
+3. If macOS asks *"Are you sure you want to open it?"* — click **Open**
+4. A Terminal window opens and runs through the checks — watch for any errors
+5. When you see **"Setup complete!"** you're ready
 
-**Option B — API key:**
-1. Go to [console.anthropic.com](https://console.anthropic.com)
-2. Click "API Keys" and create a new key
-3. Copy the key (it starts with `sk-ant-...`)
-4. In Claude Code, paste the key when prompted
-5. Add a payment method in the Anthropic console so charges can be billed
+**On Windows:**
+1. Open the `Umesh-CardScout` folder in File Explorer
+2. Double-click **`setup.bat`**
+3. A black window opens and runs through the checks — watch for any errors
+4. When you see **"Setup complete!"** press any key to close
+
+The script checks for Python, installs `openpyxl` and `Pillow` (the Excel and image libraries), and checks for Claude Code. If anything is missing, it tells you exactly what to do.
 
 ---
 
-### Step 5 — Open This Folder in Claude Code
+### Step 4 — Open This Folder in Claude Code
 
 1. Open Claude Code
 2. Click **File → Open Folder** (Mac) or **File → Open** (Windows)
-3. Navigate to the `card-scout` folder and select it
+3. Navigate to the `Umesh-CardScout` folder and select it
 4. You should see the folder's files on the left side of the screen
 
 ---
