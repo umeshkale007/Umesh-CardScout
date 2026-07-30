@@ -1,0 +1,8 @@
+contacts.xlsx
+inbox/*
+!inbox/.gitkeep
+*_compressed.jpg
+*_converted.jpg
+__pycache__/
+*.pyc
+.DS_Store
